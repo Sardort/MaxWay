@@ -10,6 +10,10 @@ import java.util.List;
 
 public class MyBotService {
 
+
+    // qachon yozasiz aka bularni
+
+
     public SendMessage sendMessage(Long chatId){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);

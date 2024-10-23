@@ -9,8 +9,7 @@ import java.util.List;
 
 public class MyBot extends TelegramLongPollingBot {
 
-    private MyBotService myBotService = new MyBotService();
-
+// qachon yozasiz aka bularni
     @Override
     public String getBotUsername() {
         return "MaxwayCloneBot";

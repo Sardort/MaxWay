@@ -13,8 +13,6 @@ public class Main {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new MyBot());
 
-            System.out.println("" +
-                    " ");
             System.out.println("Run bo'ldi");
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
