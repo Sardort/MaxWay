@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MyBot extends TelegramLongPollingBot {
 
-
+// qachon yozasiz aka bularni
     @Override
     public String getBotUsername() {
         return "";
