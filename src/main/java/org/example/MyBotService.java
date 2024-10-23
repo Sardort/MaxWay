@@ -48,7 +48,7 @@ public class MyBotService {
     public SendMessage mainMenuUzbek(Long chatId){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-
+        sendMessage.setText(" Quyidagi lardan birini tanlamg");
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> rowList = new ArrayList<>();
 

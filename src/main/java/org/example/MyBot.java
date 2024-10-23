@@ -15,6 +15,9 @@ public class MyBot extends TelegramLongPollingBot {
         return "MaxwayCloneBot";
     }
 
+
+    private MyBotService myBotService= new MyBotService();
+
     @Override
     public void onUpdateReceived(Update update) {
 
