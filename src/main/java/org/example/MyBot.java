@@ -31,15 +31,42 @@ public class MyBot extends TelegramLongPollingBot {
 
             if (text.equals("/start")){
                 try {
-                    execute(myBotService.language(chatId));
+                    execute(myBotService.sendContactShare(chatId));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
 
+
+
             if (text.equals("O'zbek tili")){
                 try {
                     execute(myBotService.mainMenuUzbek(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if (text.equals("🛍" + "Buyurtma berish")){
+                try {
+                    execute(myBotService.orderMenu(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if (text.equals("Barcha filiallar")){
+                try {
+                    execute(myBotService.filials(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if (text.equals("Max Way Beruniy")){
+                try {
+                    execute(myBotService.infoBeruniy(chatId));
+                    execute(myBotService.locationBeruniy(chatId));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
@@ -59,6 +86,17 @@ public class MyBot extends TelegramLongPollingBot {
             }*/
         }
 
+        if (update.hasMessage() && update.getMessage().hasContact()){
+            Long chatId = update.getMessage().getChatId();
+
+            try {
+                execute(myBotService.language(chatId));
+            } catch (TelegramApiException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
     }
 
     @Override
