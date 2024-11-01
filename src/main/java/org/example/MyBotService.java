@@ -85,7 +85,7 @@ public class MyBotService {
 
         KeyboardRow row = new KeyboardRow();
         KeyboardButton button = new KeyboardButton();
-        button.setText("🛍" + "Buyurtma berish");
+        button.setText("\uD83D\uDECDBuyurtma berish");
         row.add(button);
         rowList.add(row);
 
@@ -95,7 +95,7 @@ public class MyBotService {
         row1.add(button1);
 
         KeyboardButton button2 = new KeyboardButton();
-        button2.setText("Barcha filiallar");
+        button2.setText("\uD83D\uDC4DBarcha filiallar");
         row1.add(button2);
         rowList.add(row1);
 
@@ -239,7 +239,7 @@ public class MyBotService {
         KeyboardButton button3 = new KeyboardButton();
         button3.setText("\uD83D\uDCCDMax Way Parus");
         row1.add(button3);
-        rowList.add(row);
+        rowList.add(row1);
 
         KeyboardRow row2 = new KeyboardRow();
         KeyboardButton button4 = new KeyboardButton();
@@ -249,7 +249,7 @@ public class MyBotService {
         KeyboardButton button5 = new KeyboardButton();
         button5.setText("\uD83D\uDCCDMax Way Universam");
         row2.add(button5);
-        rowList.add(row);
+        rowList.add(row2);
 
         KeyboardRow row3 = new KeyboardRow();
         KeyboardButton button6 = new KeyboardButton();
@@ -259,7 +259,7 @@ public class MyBotService {
         KeyboardButton button7 = new KeyboardButton();
         button7.setText("\uD83D\uDCCDMax Way Muqimiy");
         row3.add(button7);
-        rowList.add(row);
+        rowList.add(row3);
 
         //Dalshe qolgan filiallarni qo'shish kerak
 

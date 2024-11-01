@@ -40,7 +40,6 @@ public class MyBot extends TelegramLongPollingBot {
             }
 
 
-
             if (text.equals("O'zbek tili")){
                 try {
                     execute(myBotService.mainMenuUzbek(chatId));
@@ -49,7 +48,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("Barcha filiallar")){
+            if (text.equals("\uD83D\uDC4DBarcha filiallar")){
                 try {
                     execute(myBotService.filials(chatId));
                 } catch (TelegramApiException e) {
@@ -122,7 +121,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("🛍" + "Buyurtma berish")){
+            if (text.equals("\uD83D\uDECDBuyurtma berish")){
                 try {
                     execute(myBotService.orderMenu(chatId));
                 } catch (TelegramApiException e) {
@@ -153,6 +152,13 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
+            if (text.equals("Lavash")){
+                try {
+                    execute(myBotService.sendPhotoLavash(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
 
             /*if (text.equals("Lavash")){
