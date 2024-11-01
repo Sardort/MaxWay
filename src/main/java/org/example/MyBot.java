@@ -205,7 +205,6 @@ public class MyBot extends TelegramLongPollingBot {
                 EditMessageText editMessageText = new EditMessageText();
                 editMessageText.setChatId(chatId);
                 editMessageText.setMessageId(callbackQuery.getMessage().getMessageId());
-
             }
         }
     }
