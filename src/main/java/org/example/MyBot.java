@@ -2,6 +2,7 @@ package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -11,27 +12,27 @@ import java.util.List;
 
 public class MyBot extends TelegramLongPollingBot {
 
-// qachon yozasiz aka bularni
+    // qachon yozasiz aka bularni
     @Override
     public String getBotUsername() {
-        return "MaxwayCloneBot";
+        return "onlinedarslarplatformasiBot";
     }
 
 
-    private MyBotService myBotService= new MyBotService();
+    private MyBotService myBotService = new MyBotService();
 
     @Override
     public void onUpdateReceived(Update update) {
 
-        if (update.hasMessage() && update.getMessage().hasText()){
+        if (update.hasMessage() && update.getMessage().hasText()) {
             String text = update.getMessage().getText();
             Long chatId = update.getMessage().getChatId();
             String firstName = update.getMessage().getChat().getFirstName();
             String lastName = update.getMessage().getChat().getLastName();
 
-            info(chatId,text,firstName,lastName);
+            info(chatId, text, firstName, lastName);
 
-            if (text.equals("/start")){
+            if (text.equals("/start")) {
                 try {
                     execute(myBotService.sendContactShare(chatId));
                 } catch (TelegramApiException e) {
@@ -40,7 +41,7 @@ public class MyBot extends TelegramLongPollingBot {
             }
 
 
-            if (text.equals("O'zbek tili")){
+            if (text.equals("O'zbek tili")) {
                 try {
                     execute(myBotService.mainMenuUzbek(chatId));
                 } catch (TelegramApiException e) {
@@ -48,7 +49,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("\uD83D\uDC4DBarcha filiallar")){
+            if (text.equals("\uD83D\uDC4DBarcha filiallar")) {
                 try {
                     execute(myBotService.filials(chatId));
                 } catch (TelegramApiException e) {
@@ -56,7 +57,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("Max Way Beruniy")){
+            if (text.equals("Max Way Beruniy")) {
                 try {
                     execute(myBotService.infoBeruniy(chatId));
                     execute(myBotService.locationBeruniy(chatId));
@@ -64,7 +65,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Aviasozlar")){
+            if (text.equals("Max Way Aviasozlar")) {
                 try {
                     execute(myBotService.infoAviasozlar(chatId));
                     execute(myBotService.locationAviasozlar(chatId));
@@ -72,7 +73,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Risoviy")){
+            if (text.equals("Max Way Risoviy")) {
                 try {
                     execute(myBotService.infoRisoviy(chatId));
                     execute(myBotService.locationRisoviy(chatId));
@@ -80,7 +81,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Parus")){
+            if (text.equals("Max Way Parus")) {
                 try {
                     execute(myBotService.infoParus(chatId));
                     execute(myBotService.locationParus(chatId));
@@ -88,7 +89,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Parkent")){
+            if (text.equals("Max Way Parkent")) {
                 try {
                     execute(myBotService.infoParkent(chatId));
                     execute(myBotService.locationParkent(chatId));
@@ -96,7 +97,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Universam")){
+            if (text.equals("Max Way Universam")) {
                 try {
                     execute(myBotService.infoUniversam(chatId));
                     execute(myBotService.locationUniversam(chatId));
@@ -104,7 +105,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Royson")){
+            if (text.equals("Max Way Royson")) {
                 try {
                     execute(myBotService.infoRoyson(chatId));
                     execute(myBotService.locationRoyson(chatId));
@@ -112,7 +113,7 @@ public class MyBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Max Way Muqimiy")){
+            if (text.equals("Max Way Muqimiy")) {
                 try {
                     execute(myBotService.infoMuqimiy(chatId));
                     execute(myBotService.locationMuqimiy(chatId));
@@ -121,7 +122,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("\uD83D\uDECDBuyurtma berish")){
+            if (text.equals("\uD83D\uDECDBuyurtma berish")) {
                 try {
                     execute(myBotService.orderMenu(chatId));
                 } catch (TelegramApiException e) {
@@ -129,7 +130,7 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("Olib ketish")){
+            if (text.equals("Olib ketish")) {
                 try {
                     execute(myBotService.filialsForOrders(chatId));
                 } catch (TelegramApiException e) {
@@ -137,14 +138,14 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("\uD83D\uDCCDMax Way Beruniy")){
+            if (text.equals("\uD83D\uDCCDMax Way Beruniy")) {
                 try {
                     execute(myBotService.menuFilial(chatId));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if (text.equals("Biz haqimizda")){
+            if (text.equals("Biz haqimizda")) {
                 try {
                     execute(myBotService.aboutUs(chatId));
                 } catch (TelegramApiException e) {
@@ -152,9 +153,16 @@ public class MyBot extends TelegramLongPollingBot {
                 }
             }
 
-            if (text.equals("Lavash")){
+            if (text.equals("Lavash")) {
                 try {
                     execute(myBotService.sendPhotoLavash(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if (text.equals("/test")){
+                try {
+                    execute(myBotService.sendPhotoLavashozi(chatId));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
@@ -189,7 +197,7 @@ public class MyBot extends TelegramLongPollingBot {
             }*/
         }
 
-        if (update.hasMessage() && update.getMessage().hasContact()){
+        if (update.hasMessage() && update.getMessage().hasContact()) {
             Long chatId = update.getMessage().getChatId();
 
             try {
@@ -199,28 +207,56 @@ public class MyBot extends TelegramLongPollingBot {
             }
 
 
-        }
-        else if(update.hasCallbackQuery()){
-            Long chatId = update.getMessage().getChatId();
+        } else if (update.hasCallbackQuery()) {
 
             CallbackQuery callbackQuery = update.getCallbackQuery();
+            Long chatId = callbackQuery.getMessage().getChatId();
+            Integer messageId = callbackQuery.getMessage().getMessageId();
             String data = callbackQuery.getData();
             System.out.println(data);
 
-            if (data.equals("Lavash")){
+            if (data.equals("Lavash")) {
                 EditMessageText editMessageText = new EditMessageText();
                 editMessageText.setChatId(chatId);
                 editMessageText.setMessageId(callbackQuery.getMessage().getMessageId());
             }
+
+            if (data.equals("plusId")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(myBotService.sendPhotoLavashoziPlus(chatId));
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+            }
+            if(data.equals("minusId")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(myBotService.sendPhotoLavashoziMinus(chatId));
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+
         }
     }
 
     @Override
     public String getBotToken() {
-        return "7573595803:AAHfkYMaT-K7haa613rHdG5t2nVbX_gRLrE";
+        return "7747156046:AAFRB-oFAHOH2KWnwX9GEh3591R1ixC5Q9o";
     }
 
-    public void info (Long chatId, String text, String firstname, String lastname){
+    public void info(Long chatId, String text, String firstname, String lastname) {
         System.out.println(" ChatId " + chatId + "\n" + " Text " + text + "\n" +
                 " Firsname " + firstname + "\n" + " Lastname " + lastname);
     }

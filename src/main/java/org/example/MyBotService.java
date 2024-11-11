@@ -537,7 +537,117 @@ public class MyBotService {
         return sendPhoto;
     }
 
+    int i=1;
 
+    public SendPhoto sendPhotoLavashozi(Long chatId) {
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId);
+        sendPhoto.setPhoto(new InputFile("https://images.app.goo.gl/sfBxQkvZzEMHxXC4A"));
+        sendPhoto.setCaption("Ixtiyoriy birini tanlang");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowlist = new ArrayList<>();
+
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("-");
+        button.setCallbackData("minusId");
+        row.add(button);
+        rowlist.add(row);
+
+
+        button= new InlineKeyboardButton();
+        button.setText(String.valueOf(i));
+        button.setCallbackData("sonId");
+        row.add(button);
+
+        button= new InlineKeyboardButton();
+        button.setText("+");
+        button.setCallbackData("plusId");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowlist);
+        sendPhoto.setReplyMarkup(inlineKeyboardMarkup);
+
+        return sendPhoto;
+    }
+
+    public InlineKeyboardMarkup sendPhotoLavashoziPlus(Long chatId) {
+
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId);
+        sendPhoto.setPhoto(new InputFile("https://images.app.goo.gl/sfBxQkvZzEMHxXC4A"));
+        sendPhoto.setCaption("Ixtiyoriy birini tanlang");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowlist = new ArrayList<>();
+
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("-");
+        button.setCallbackData("minusId");
+        row.add(button);
+        rowlist.add(row);
+
+
+        button= new InlineKeyboardButton();
+        button.setText(String.valueOf(++i));
+        button.setCallbackData("sonId");
+        row.add(button);
+
+        button= new InlineKeyboardButton();
+        button.setText("+");
+        button.setCallbackData("plusId");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowlist);
+        sendPhoto.setReplyMarkup(inlineKeyboardMarkup);
+
+        return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup sendPhotoLavashoziMinus(Long chatId) {
+
+        if (i>1){
+            --i;
+        }
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId);
+        sendPhoto.setPhoto(new InputFile("https://images.app.goo.gl/sfBxQkvZzEMHxXC4A"));
+        sendPhoto.setCaption("Ixtiyoriy birini tanlang");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowlist = new ArrayList<>();
+
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("-");
+        button.setCallbackData("minusId");
+        row.add(button);
+        rowlist.add(row);
+
+
+        button= new InlineKeyboardButton();
+        button.setText(String.valueOf(i));
+        button.setCallbackData("sonId");
+        row.add(button);
+
+        button= new InlineKeyboardButton();
+        button.setText("+");
+        button.setCallbackData("plusId");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowlist);
+        sendPhoto.setReplyMarkup(inlineKeyboardMarkup);
+
+        return inlineKeyboardMarkup;
+    }
+    public SendPhoto sendPhoto(Long chatId){
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId);
+        sendPhoto.setPhoto(new InputFile("https://images.app.goo.gl/sxEWPiKGUMZYhQq6A"));
+        return sendPhoto;
+    }
 
 
 
